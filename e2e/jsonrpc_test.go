@@ -6,6 +6,7 @@ import (
 	"math/big"
 	"testing"
 
+	"github.com/0xPolygon/polygon-edge/contracts/abis"
 	"github.com/0xPolygon/polygon-edge/e2e/framework"
 	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/stretchr/testify/require"
@@ -88,8 +89,36 @@ func TestJsonRPC(t *testing.T) {
 		client.GetNonce(key1.Address(), block.Hash)
 	})
 
-	t.Run("eth_getStorage", func(t *testing.T) {
-		t.Skip("TODO")
+	t.Run("eth_getStorageAt", func(t *testing.T) {
+		key1, err := wallet.GenerateKey()
+		require.NoError(t, err)
+
+		srv.Txn(fund).Transfer(key1.Address(), big.NewInt(10000000000000000)).Send().NoFail(t)
+
+		txn := srv.Txn(key1).Deploy(bytecode)
+		txn.Send().NoFail(t)
+
+		target := txn.Receipt().ContractAddress
+
+		resp, err := client.GetStorageAt(target, ethgo.Hash{}, ethgo.Latest)
+		require.NoError(t, err)
+		require.Equal(t, "0x0000000000000000000000000000000000000000000000000000000000000000", resp.String())
+
+		setValueMethod, ok := abis.SampleABI.Methods["setValue"]
+		if !ok {
+			t.Fatalf("Unable to get setValue method")
+		}
+
+		newVal := big.NewInt(1)
+
+		input, err := setValueMethod.Inputs.Encode([]interface{}{newVal})
+		require.NoError(t, err)
+
+		srv.Txn(key1).To(target).Deploy(append(setValueMethod.ID(), input...)).Send().NoFail(t)
+
+		resp, err = client.GetStorageAt(target, ethgo.Hash{}, ethgo.Latest)
+		require.NoError(t, err)
+		require.Equal(t, "0x0000000000000000000000000000000000000000000000000000000000000001", resp.String())
 	})
 
 	t.Run("eth_getCode", func(t *testing.T) {
