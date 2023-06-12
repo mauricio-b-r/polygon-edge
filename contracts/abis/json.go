@@ -384,3 +384,87 @@ const StressTestJSONABI = `[
       "type": "function"
     }
   ]`
+
+const SampleJSONABI = `[
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getValue",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "setA2",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_val",
+				"type": "uint256"
+			}
+		],
+		"name": "setValue",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "setA1",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "val_0",
+				"type": "address"
+			},
+			{
+				"name": "val_1",
+				"type": "address"
+			}
+		],
+		"name": "setterA",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "val_0",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"name": "val_1",
+				"type": "address"
+			}
+		],
+		"name": "A",
+		"type": "event"
+	}
+]`
