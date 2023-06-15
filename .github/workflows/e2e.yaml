@@ -1,6 +1,6 @@
 ---
 name: E2E tests
-on:  # yamllint disable-line rule:truthy
+on: # yamllint disable-line rule:truthy
   push:
     branches:
       - main

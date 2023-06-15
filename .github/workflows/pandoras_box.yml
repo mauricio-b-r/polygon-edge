@@ -1,11 +1,11 @@
 ---
 name: Pandora's Box
-on:  # yamllint disable-line rule:truthy
+on: # yamllint disable-line rule:truthy
   workflow_dispatch:
     inputs:
       runner:
         description: The runner to execute on
-        default: 'ubuntu-latest'
+        default: "ubuntu-latest"
         type: choice
         options:
           - ubuntu-latest
@@ -16,15 +16,15 @@ on:  # yamllint disable-line rule:truthy
         required: false
         type: environment
       transaction_count:
-        default: '10000'
+        default: "10000"
         description: The number of transactions to send
         type: string
       transaction_batch:
-        default: '100'
+        default: "100"
         description: The transaction batch size
         type: string
       mode:
-        default: 'EOA'
+        default: "EOA"
         description: The mode for the stress test
         type: choice
         options:
@@ -54,8 +54,6 @@ on:  # yamllint disable-line rule:truthy
         description: The mode for the stress test
         type: string
     secrets:
-      SLACK_PERFORMANCE_WEBHOOK_URL:
-        required: true
       PANDORAS_TARGET:
         required: true
       PANDORAS_MNEMONIC:
@@ -75,38 +73,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'npm'
+          cache: "npm"
       - name: Prepare Pandora's Box
         run: |
           npm install -g yarn
           yarn install && yarn build && yarn link
           echo "$HOME/.yarn/bin" >> $GITHUB_PATH
-      - name: Notify Slack
-        if: false
-        uses: slackapi/slack-github-action@v1.22.0
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_PERFORMANCE_WEBHOOK_URL }}
-          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
-        with:
-          payload: |
-            {
-              "blocks": [
-                {
-                  "type": "header",
-                  "text": {
-                    "type": "plain_text",
-                    "text": "GitHub Action - Pandora's Box - Starting"
-                  }
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|Status>"
-                  }
-                }
-              ]
-            }
       - name: Install JQ
         run: |
           mkdir -p $HOME/.local/bin
@@ -123,59 +95,3 @@ jobs:
         with:
           name: pandoras-consequences-report
           path: pandorasConsequences.json
-      - name: Notify Slack
-        uses: slackapi/slack-github-action@v1.22.0
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_PERFORMANCE_WEBHOOK_URL }}
-          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
-        with:
-          payload: |
-            {
-              "blocks": [
-                {
-                  "type": "header",
-                  "text": {
-                    "type": "plain_text",
-                    "text": "Pandora's Box Results"
-                  }
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "Approximate TPS: `${{ steps.pandora.outputs.tps }}`"
-                  }
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "Total Transactions Sent: `${{ inputs.transaction_count }}`"
-                  }
-                },
-                {
-                  "type": "divider"
-                },
-                {
-                  "type": "context",
-                  "elements": [
-                      {
-                        "type": "mrkdwn",
-                        "text": "Environment: `${{ inputs.environment }}`"
-                      },
-                      {
-                        "type": "mrkdwn",
-                        "text": "Test Mode: `${{ inputs.mode }}`"
-                      },
-                      {
-                        "type": "mrkdwn",
-                        "text": "JSON-RPC Endpoint: ${{ secrets.PANDORAS_TARGET }}"
-                      },
-                      {
-                        "type": "mrkdwn",
-                        "text": "Workflow: <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|Results>"
-                      }
-                    ]
-                  }
-                ]
-              }

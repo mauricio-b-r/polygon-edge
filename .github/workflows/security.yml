@@ -1,6 +1,6 @@
 ---
 name: Security Scan
-on:  # yamllint disable-line rule:truthy
+on: # yamllint disable-line rule:truthy
   workflow_call:
     secrets:
       SNYK_TOKEN:
@@ -9,7 +9,7 @@ on:  # yamllint disable-line rule:truthy
         required: true
   workflow_dispatch: {}
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: "0 0 * * 0"
 
 jobs:
   snyk:
