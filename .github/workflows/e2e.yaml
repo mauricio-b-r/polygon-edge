@@ -27,5 +27,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: e2e-logs
-          path: e2e/e2e-logs-*/
+          path: e2e-logs-*/
           retention-days: 30

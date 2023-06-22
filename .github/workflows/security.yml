@@ -16,6 +16,9 @@ jobs:
     name: Snyk and Publish
     runs-on: ubuntu-latest
     continue-on-error: true
+    permissions:
+      # required for all workflows
+      security-events: write
     steps:
       - name: Checkout Source
         uses: actions/checkout@v3
@@ -34,6 +37,9 @@ jobs:
     name: Snyk Code and Publish
     runs-on: ubuntu-latest
     continue-on-error: true
+    permissions:
+      # required for all workflows
+      security-events: write
     steps:
       - name: Checkout Source
         uses: actions/checkout@v3
