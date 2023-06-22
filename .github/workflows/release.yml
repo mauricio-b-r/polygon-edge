@@ -34,12 +34,6 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 
-      - name: Login to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
       - name: Run GoReleaser
         run: |
           docker run \
@@ -47,7 +41,8 @@ jobs:
           		--privileged \
           		-e CGO_ENABLED=1 \
           		-e GITHUB_TOKEN \
-              -e DOCKER_CONFIG \
+          		-e DOCKER_USERNAME \
+          		-e DOCKER_PASSWORD \
           		-v /var/run/docker.sock:/var/run/docker.sock \
           		-v `pwd`:/go/src/$(PACKAGE_NAME) \
           		-w /go/src/$(PACKAGE_NAME) \
@@ -55,6 +50,8 @@ jobs:
           		--rm-dist --skip-validate
         env:
           PACKAGE_NAME: github.com/mauricio-b-r/polygon-edge
-          GOLANG_CROSS_VERSION: v1.20.5
+          GOLANG_CROSS_VERSION: v1.18.3
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ steps.prepare.outputs.tag_name }}
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
