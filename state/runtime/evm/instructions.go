@@ -8,10 +8,10 @@ import (
 	"math/bits"
 	"sync"
 
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/helper/keccak"
-	"github.com/0xPolygon/polygon-edge/state/runtime"
-	"github.com/0xPolygon/polygon-edge/types"
+	"github.com/mauricio-b-r/polygon-edge/crypto"
+	"github.com/mauricio-b-r/polygon-edge/helper/keccak"
+	"github.com/mauricio-b-r/polygon-edge/state/runtime"
+	"github.com/mauricio-b-r/polygon-edge/types"
 )
 
 type instruction func(c *state)

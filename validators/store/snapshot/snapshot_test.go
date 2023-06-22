@@ -7,12 +7,12 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/crypto"
-	testHelper "github.com/0xPolygon/polygon-edge/helper/tests"
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
-	"github.com/0xPolygon/polygon-edge/validators/store"
 	"github.com/hashicorp/go-hclog"
+	"github.com/mauricio-b-r/polygon-edge/crypto"
+	testHelper "github.com/mauricio-b-r/polygon-edge/helper/tests"
+	"github.com/mauricio-b-r/polygon-edge/types"
+	"github.com/mauricio-b-r/polygon-edge/validators"
+	"github.com/mauricio-b-r/polygon-edge/validators/store"
 	"github.com/stretchr/testify/assert"
 )
 

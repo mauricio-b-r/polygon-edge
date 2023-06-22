@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/0xPolygon/polygon-edge/blockchain"
-	"github.com/0xPolygon/polygon-edge/consensus"
-	"github.com/0xPolygon/polygon-edge/helper/progress"
-	"github.com/0xPolygon/polygon-edge/state"
-	"github.com/0xPolygon/polygon-edge/txpool"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/hashicorp/go-hclog"
+	"github.com/mauricio-b-r/polygon-edge/blockchain"
+	"github.com/mauricio-b-r/polygon-edge/consensus"
+	"github.com/mauricio-b-r/polygon-edge/helper/progress"
+	"github.com/mauricio-b-r/polygon-edge/state"
+	"github.com/mauricio-b-r/polygon-edge/txpool"
+	"github.com/mauricio-b-r/polygon-edge/types"
 )
 
 const (

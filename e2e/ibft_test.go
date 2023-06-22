@@ -6,12 +6,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/0xPolygon/polygon-edge/command/server/config"
-	ibftSigner "github.com/0xPolygon/polygon-edge/consensus/ibft/signer"
-	"github.com/0xPolygon/polygon-edge/e2e/framework"
-	"github.com/0xPolygon/polygon-edge/helper/tests"
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
+	"github.com/mauricio-b-r/polygon-edge/command/server/config"
+	ibftSigner "github.com/mauricio-b-r/polygon-edge/consensus/ibft/signer"
+	"github.com/mauricio-b-r/polygon-edge/e2e/framework"
+	"github.com/mauricio-b-r/polygon-edge/helper/tests"
+	"github.com/mauricio-b-r/polygon-edge/types"
+	"github.com/mauricio-b-r/polygon-edge/validators"
 	"github.com/stretchr/testify/assert"
 	"github.com/umbracle/ethgo"
 )

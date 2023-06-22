@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/0xPolygon/polygon-edge/chain"
-	"github.com/0xPolygon/polygon-edge/helper/common"
-	"github.com/0xPolygon/polygon-edge/helper/hex"
-	"github.com/0xPolygon/polygon-edge/helper/keccak"
-	"github.com/0xPolygon/polygon-edge/types"
-	"github.com/0xPolygon/polygon-edge/validators"
+	"github.com/mauricio-b-r/polygon-edge/chain"
+	"github.com/mauricio-b-r/polygon-edge/helper/common"
+	"github.com/mauricio-b-r/polygon-edge/helper/hex"
+	"github.com/mauricio-b-r/polygon-edge/helper/keccak"
+	"github.com/mauricio-b-r/polygon-edge/types"
+	"github.com/mauricio-b-r/polygon-edge/validators"
 )
 
 var (

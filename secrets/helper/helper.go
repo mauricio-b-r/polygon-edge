@@ -4,18 +4,18 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/0xPolygon/polygon-edge/crypto"
-	"github.com/0xPolygon/polygon-edge/helper/hex"
-	"github.com/0xPolygon/polygon-edge/network"
-	"github.com/0xPolygon/polygon-edge/secrets"
-	"github.com/0xPolygon/polygon-edge/secrets/awsssm"
-	"github.com/0xPolygon/polygon-edge/secrets/gcpssm"
-	"github.com/0xPolygon/polygon-edge/secrets/hashicorpvault"
-	"github.com/0xPolygon/polygon-edge/secrets/local"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/hashicorp/go-hclog"
 	libp2pCrypto "github.com/libp2p/go-libp2p/core/crypto"
 	"github.com/libp2p/go-libp2p/core/peer"
+	"github.com/mauricio-b-r/polygon-edge/crypto"
+	"github.com/mauricio-b-r/polygon-edge/helper/hex"
+	"github.com/mauricio-b-r/polygon-edge/network"
+	"github.com/mauricio-b-r/polygon-edge/secrets"
+	"github.com/mauricio-b-r/polygon-edge/secrets/awsssm"
+	"github.com/mauricio-b-r/polygon-edge/secrets/gcpssm"
+	"github.com/mauricio-b-r/polygon-edge/secrets/hashicorpvault"
+	"github.com/mauricio-b-r/polygon-edge/secrets/local"
+	"github.com/mauricio-b-r/polygon-edge/types"
 )
 
 // SetupLocalSecretsManager is a helper method for boilerplate local secrets manager setup

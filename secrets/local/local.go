@@ -7,9 +7,9 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/0xPolygon/polygon-edge/helper/common"
-	"github.com/0xPolygon/polygon-edge/secrets"
 	"github.com/hashicorp/go-hclog"
+	"github.com/mauricio-b-r/polygon-edge/helper/common"
+	"github.com/mauricio-b-r/polygon-edge/secrets"
 )
 
 // LocalSecretsManager is a SecretsManager that

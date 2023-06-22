@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/0xPolygon/polygon-edge/helper/keccak"
+	"github.com/mauricio-b-r/polygon-edge/helper/keccak"
 	"github.com/umbracle/fastrlp"
 )
 

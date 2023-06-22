@@ -4,10 +4,10 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/chain"
-	"github.com/0xPolygon/polygon-edge/state/runtime"
-	"github.com/0xPolygon/polygon-edge/state/runtime/tracer"
-	"github.com/0xPolygon/polygon-edge/types"
+	"github.com/mauricio-b-r/polygon-edge/chain"
+	"github.com/mauricio-b-r/polygon-edge/state/runtime"
+	"github.com/mauricio-b-r/polygon-edge/state/runtime/tracer"
+	"github.com/mauricio-b-r/polygon-edge/types"
 	"github.com/stretchr/testify/assert"
 )
 

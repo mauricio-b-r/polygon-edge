@@ -4,9 +4,9 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/state/runtime"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/hashicorp/go-hclog"
+	"github.com/mauricio-b-r/polygon-edge/state/runtime"
+	"github.com/mauricio-b-r/polygon-edge/types"
 	"github.com/stretchr/testify/assert"
 )
 

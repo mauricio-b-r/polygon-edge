@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/0xPolygon/polygon-edge/helper/hex"
-	"github.com/0xPolygon/polygon-edge/state/runtime/tracer"
-	"github.com/0xPolygon/polygon-edge/types"
+	"github.com/mauricio-b-r/polygon-edge/helper/hex"
+	"github.com/mauricio-b-r/polygon-edge/state/runtime/tracer"
+	"github.com/mauricio-b-r/polygon-edge/types"
 	"github.com/stretchr/testify/assert"
 )
 

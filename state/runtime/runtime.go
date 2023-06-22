@@ -4,9 +4,9 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/0xPolygon/polygon-edge/chain"
-	"github.com/0xPolygon/polygon-edge/state/runtime/tracer"
-	"github.com/0xPolygon/polygon-edge/types"
+	"github.com/mauricio-b-r/polygon-edge/chain"
+	"github.com/mauricio-b-r/polygon-edge/state/runtime/tracer"
+	"github.com/mauricio-b-r/polygon-edge/types"
 )
 
 // TxContext is the context of the transaction

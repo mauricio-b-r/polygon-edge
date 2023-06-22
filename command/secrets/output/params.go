@@ -6,11 +6,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/0xPolygon/polygon-edge/command"
-	"github.com/0xPolygon/polygon-edge/helper/common"
-	"github.com/0xPolygon/polygon-edge/secrets"
-	"github.com/0xPolygon/polygon-edge/secrets/helper"
-	"github.com/0xPolygon/polygon-edge/types"
+	"github.com/mauricio-b-r/polygon-edge/command"
+	"github.com/mauricio-b-r/polygon-edge/helper/common"
+	"github.com/mauricio-b-r/polygon-edge/secrets"
+	"github.com/mauricio-b-r/polygon-edge/secrets/helper"
+	"github.com/mauricio-b-r/polygon-edge/types"
 )
 
 const (

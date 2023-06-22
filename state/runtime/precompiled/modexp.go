@@ -5,7 +5,7 @@ import (
 
 	"math"
 
-	"github.com/0xPolygon/polygon-edge/chain"
+	"github.com/mauricio-b-r/polygon-edge/chain"
 )
 
 type modExp struct {

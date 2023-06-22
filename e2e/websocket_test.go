@@ -6,10 +6,10 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/0xPolygon/polygon-edge/e2e/framework"
-	"github.com/0xPolygon/polygon-edge/jsonrpc"
-	"github.com/0xPolygon/polygon-edge/types"
 	"github.com/gorilla/websocket"
+	"github.com/mauricio-b-r/polygon-edge/e2e/framework"
+	"github.com/mauricio-b-r/polygon-edge/jsonrpc"
+	"github.com/mauricio-b-r/polygon-edge/types"
 	"github.com/stretchr/testify/assert"
 )
 
