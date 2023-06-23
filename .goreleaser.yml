@@ -96,7 +96,7 @@ snapshot:
 
 dockers:
   - image_templates:
-      - goreleasercross/{{ .ProjectName }}:{{ .Version }}-amd64
+      - {{ .Env.DOCKER_USERNAME }}/{{ .ProjectName }}:{{ .Version }}-amd64
     dockerfile: Dockerfile.release
     use: buildx
     goarch: amd64
@@ -107,7 +107,7 @@ dockers:
     skip_push: false
 
   - image_templates:
-      - goreleasercross/{{ .ProjectName }}:{{ .Version }}-arm64
+      - {{ .Env.DOCKER_USERNAME }}/{{ .ProjectName }}:{{ .Version }}-arm64
     dockerfile: Dockerfile.release
     use: buildx
     goarch: arm64
@@ -118,14 +118,14 @@ dockers:
     skip_push: false
 
 docker_manifests:
-  - name_template: goreleasercross/{{ .ProjectName }}:{{ .Version }}
+  - name_template: {{ .Env.DOCKER_USERNAME }}/{{ .ProjectName }}:{{ .Version }}
     image_templates:
-      - goreleasercross/{{ .ProjectName }}:{{ .Version }}-amd64
-      - goreleasercross/{{ .ProjectName }}:{{ .Version }}-arm64
+      - {{ .Env.DOCKER_USERNAME }}/{{ .ProjectName }}:{{ .Version }}-amd64
+      - {{ .Env.DOCKER_USERNAME }}/{{ .ProjectName }}:{{ .Version }}-arm64
     skip_push: false
 
-  - name_template: goreleasercross/{{ .ProjectName }}:latest
+  - name_template: {{ .Env.DOCKER_USERNAME }}/{{ .ProjectName }}:latest
     image_templates:
-      - goreleasercross/{{ .ProjectName }}:{{ .Version }}-amd64
-      - goreleasercross/{{ .ProjectName }}:{{ .Version }}-arm64
+      - {{ .Env.DOCKER_USERNAME }}/{{ .ProjectName }}:{{ .Version }}-amd64
+      - {{ .Env.DOCKER_USERNAME }}/{{ .ProjectName }}:{{ .Version }}-arm64
     skip_push: auto
